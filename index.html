@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagle Aquatics – Summer Performance Camp Series 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D2137;
+  --teal: #0E7B6B;
+  --teal-light: #13A08C;
+  --gold: #C9990A;
+  --gold-light: #F2C84B;
+  --gold-header: #B8860B;
+  --blue: #1565C0;
+  --green: #2E7D32;
+  --off-white: #F5F2EC;
+  --border: rgba(13,33,55,0.12);
+  --text: #1A1A1A;
+  --muted: #5A5A5A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* HERO */
+.hero{background:var(--navy);color:white;padding:80px 40px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(14,123,107,0.35) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(201,153,10,0.2) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-light);margin-bottom:16px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,96px);line-height:0.92;letter-spacing:0.02em;color:white;margin-bottom:8px}
+.hero h1 .sub{font-size:clamp(18px,3.2vw,42px);letter-spacing:0.06em;display:block;background:linear-gradient(90deg,#FFE234 0%,#FFB347 40%,#FF6B1A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.hero h1 span{color:var(--gold-light)}
+.hero-tagline{font-size:15px;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:32px}
+.hero-desc{font-size:17px;font-weight:300;color:rgba(255,255,255,0.8);max-width:560px;line-height:1.7;margin-bottom:36px}
+.hero-cta{display:inline-block;background:var(--gold);color:white;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;padding:14px 32px;border-radius:2px;transition:background 0.2s,transform 0.15s}
+.hero-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.hero-meta{margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);display:flex;gap:40px;flex-wrap:wrap}
+.hero-meta-item{font-size:13px;color:rgba(255,255,255,0.5)}
+.hero-meta-item strong{display:block;color:white;font-size:15px;font-weight:500}
+
+/* STICKY NAV */
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 40px}
+.sticky-nav-inner{max-width:860px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.sticky-nav-inner::-webkit-scrollbar{display:none}
+.nav-link{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;padding:14px 18px;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s}
+.nav-link:hover{color:white;border-bottom-color:var(--teal-light)}
+
+/* LAYOUT */
+.main{max-width:860px;margin:0 auto;padding:0 40px 80px}
+.section{padding:64px 0 0;opacity:0;transform:translateY(24px);transition:opacity 0.55s ease,transform 0.55s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+.section-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,42px);letter-spacing:0.03em;color:var(--navy);line-height:1;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--teal)}
+
+/* WEEK CARDS */
+.week-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:680px){.week-cards{grid-template-columns:1fr}}
+.week-card{border-radius:4px;overflow:hidden;border:1px solid var(--border);background:white}
+.week-card-header{padding:20px 20px 16px;color:white}
+.week-card-header.gold{background:linear-gradient(135deg,#B8860B 0%,#DAA520 50%,#C9990A 100%)}
+.week-card-header.blue{background:var(--blue)}
+.week-card-header.green{background:var(--green)}
+.week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:4px}
+.week-card-header h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.05em;line-height:1.1;margin-bottom:4px}
+.week-dates{font-size:12px;opacity:0.85;font-weight:500}
+.week-card-body{padding:18px 20px}
+.week-req{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding:5px 10px;border-radius:2px;display:inline-block}
+.week-req.gold{background:#FFF8DC;color:#6B4F00}
+.week-req.blue{background:#E3F0FF;color:#0D47A1}
+.week-req.green{background:#E8F5E9;color:#1B5E20}
+.week-card-body ul{list-style:none;padding:0}
+.week-card-body li{font-size:13.5px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.week-card-body li:last-child{border-bottom:none}
+.week-card-body li::before{content:'—';color:#ccc;font-size:12px;margin-top:2px;flex-shrink:0}
+.spots-badge{margin-top:14px;font-size:12px;font-weight:600;color:white;padding:5px 12px;border-radius:2px;display:inline-block}
+.spots-badge.gold{background:var(--gold-header)}
+.spots-badge.blue{background:var(--blue)}
+.spots-badge.green{background:var(--green)}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:620px){.two-col{grid-template-columns:1fr}}
+
+/* INFO BLOCK */
+.info-block{background:white;border:1px solid var(--border);border-radius:4px;padding:28px}
+.info-block h4{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.05em;color:var(--navy);margin-bottom:16px}
+.info-block ul{list-style:none;padding:0}
+.info-block li{font-size:14px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;line-height:1.5}
+.info-block li:last-child{border-bottom:none}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--teal);margin-top:8px;flex-shrink:0}
+
+/* SCHEDULE */
+.schedule-row{display:flex;gap:0;border-bottom:1px solid var(--border)}
+.schedule-row:first-child{border-top:1px solid var(--border)}
+.schedule-time{font-family:'DM Mono',monospace;font-size:12px;color:var(--teal);font-weight:500;min-width:150px;padding:13px 16px 13px 0;flex-shrink:0}
+.schedule-activity{font-size:14px;color:var(--text);padding:13px 0;line-height:1.4}
+.schedule-activity small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ADDON CARDS */
+.addon-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.addon-cards{grid-template-columns:1fr}}
+.addon-card{background:white;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.addon-header{padding:18px 22px 14px;background:var(--navy);color:white}
+.addon-price{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold-light);letter-spacing:0.03em;line-height:1;margin-bottom:4px}
+.addon-header h4{font-size:14px;font-weight:500;color:rgba(255,255,255,0.8)}
+.addon-weeks{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase}
+.addon-body{padding:16px 22px}
+.addon-body ul{list-style:none;padding:0}
+.addon-body li{font-size:13.5px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.4}
+.addon-body li:last-child{border-bottom:none}
+.addon-body li::before{content:'→';color:var(--teal);font-size:12px;margin-top:3px;flex-shrink:0}
+
+/* PRICING */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:640px){.policy-grid{grid-template-columns:1fr}}
+.policy-card{background:white;border:1px solid var(--border);border-radius:4px;padding:20px}
+.policy-phase{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+.policy-phase.priority{color:var(--teal)}
+.policy-phase.early{color:var(--gold)}
+.policy-phase.standard{color:#888}
+.policy-card h5{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.policy-card p{font-size:13px;color:var(--muted);line-height:1.55}
+.pricing-table{width:100%;border-collapse:collapse;font-size:14px;background:white;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.pricing-table th{padding:12px 16px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-align:center;color:white}
+.pricing-table th:first-child{text-align:left;background:var(--navy)}
+.pricing-table th.priority{background:var(--teal)}
+.pricing-table th.early{background:var(--gold)}
+.pricing-table th.standard{background:#555}
+.pricing-table td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:center}
+.pricing-table td:first-child{text-align:left;font-weight:500}
+.pricing-table tr:last-child td{border-bottom:none}
+.pricing-table tr.week1 td:first-child{border-left:3px solid var(--gold)}
+.pricing-table tr.week2 td:first-child{border-left:3px solid var(--blue)}
+.pricing-table tr.week3 td:first-child{border-left:3px solid var(--green)}
+.price-highlight{font-weight:700;color:var(--teal);font-size:15px}
+.discount-note{background:#FFF8E7;border:1px solid #F0D080;border-radius:4px;padding:16px 20px;margin-top:16px;font-size:13.5px;color:#6B4E00;line-height:1.6}
+
+/* STAFF */
+.staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:540px){.staff-grid{grid-template-columns:1fr}}
+.staff-card{background:white;border:1px solid var(--border);border-radius:4px;padding:18px 20px;display:flex;align-items:center;gap:14px}
+.staff-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:0.05em;color:white;flex-shrink:0}
+.staff-name{font-weight:600;font-size:14px;color:var(--navy);line-height:1.3}
+.staff-role{font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+
+/* SAFETY */
+.safety-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.safety-item:first-child{border-top:1px solid var(--border)}
+.safety-icon{width:34px;height:34px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.safety-item p{font-size:14px;color:var(--muted);line-height:1.6;padding-top:6px}
+
+/* WHAT TO BRING */
+.bring-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+@media(max-width:560px){.bring-grid{grid-template-columns:repeat(2,1fr)}}
+.bring-item{background:white;border:1px solid var(--border);border-radius:4px;padding:12px 14px;font-size:13.5px;color:var(--text);display:flex;align-items:center;gap:8px}
+.bring-item.included{border-color:var(--teal);background:#F0FBF8}
+.bi-label{font-size:10px;color:var(--teal);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;display:block}
+
+/* REFUND */
+.refund-table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.refund-table th{background:var(--navy);color:white;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:11px 16px;text-align:left}
+.refund-table td{padding:13px 16px;border-bottom:1px solid var(--border);font-size:14px}
+.refund-table tr:last-child td{border-bottom:none}
+.refund-table td:first-child{color:var(--muted);font-size:13px}
+.refund-table td:last-child{font-weight:500}
+.refund-no{color:#C62828}
+.refund-half{color:var(--gold)}
+.refund-full{color:var(--teal)}
+
+/* NOTES */
+.note-box{background:#F0FBF8;border-left:3px solid var(--teal);padding:14px 18px;font-size:14px;color:var(--muted);border-radius:0 4px 4px 0;margin-top:16px;line-height:1.6}
+.warning-box{background:#FFF8F0;border-left:3px solid var(--gold);padding:14px 18px;font-size:14px;color:#6B4000;border-radius:0 4px 4px 0;margin-top:12px;line-height:1.6}
+
+/* CONTACT */
+.contact-bar{background:var(--navy);color:white;border-radius:4px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-top:64px}
+.contact-bar h3{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.05em;margin-bottom:4px}
+.contact-bar p{font-size:14px;color:rgba(255,255,255,0.6)}
+.contact-bar a{color:var(--gold-light);text-decoration:none}
+.contact-links{display:flex;gap:12px;flex-wrap:wrap}
+.contact-btn{display:inline-block;padding:11px 24px;font-size:13px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:transform 0.15s,opacity 0.15s}
+.contact-btn:hover{transform:translateY(-1px);opacity:0.9}
+.contact-btn.primary{background:var(--gold);color:white}
+.contact-btn.secondary{background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.25)}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:24px 40px;font-size:12px;letter-spacing:0.06em;border-top:1px solid rgba(255,255,255,0.06)}
+.footer a{color:rgba(255,255,255,0.6);text-decoration:none}
+
+@media(max-width:600px){.main{padding:0 20px 60px}.hero{padding:60px 20px 50px}.sticky-nav{padding:0 20px}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Miami Shores Aquatic Center &middot; Summer 2026</p>
+    <h1>EAGLE<br><span class="sub">Summer Performance Camp Series</span></h1>
+    <p class="hero-tagline">Refine technique &middot; Build efficiency &middot; Elevate performance</p>
+    <p class="hero-desc">Three structured 5-day camps designed for swimmers of all levels &mdash; led by Olympian Adam Madarassy and a team of elite coaches.</p>
+    <a href="https://eagleaquatics.captyn.com" class="hero-cta">Register Now &mdash; Limited Spots</a>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>June 8&ndash;26, 2026</strong>Three weeks of camps</div>
+      <div class="hero-meta-item"><strong>Miami Shores Aquatic Center</strong>Miami Shores, FL</div>
+      <div class="hero-meta-item"><strong>All Levels Welcome</strong>Competitive &amp; Development tracks</div>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="sticky-nav-inner">
+    <a href="#camps" class="nav-link">Camps</a>
+    <a href="#schedule" class="nav-link">Schedule</a>
+    <a href="#addons" class="nav-link">Add-Ons</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#staff" class="nav-link">Staff</a>
+    <a href="#logistics" class="nav-link">Logistics</a>
+    <a href="#safety" class="nav-link">Safety</a>
+    <a href="#policies" class="nav-link">Policies</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- CAMPS -->
+  <section class="section" id="camps">
+    <p class="section-label">Camp Structure</p>
+    <h2 class="section-title">THREE CAMPS. TWO TRACKS.</h2>
+    <div class="week-cards">
+      <div class="week-card">
+        <div class="week-card-header gold">
+          <p class="week-num">Week 1 &middot; June 8&ndash;12</p>
+          <h3>Elite Performance</h3>
+          <p class="week-dates">High-performance track</p>
+        </div>
+        <div class="week-card-body">
+          <span class="week-req gold">USA Swimming &ldquo;A&rdquo; Standard</span>
+          <ul>
+            <li>Advanced technique refinement</li>
+            <li>High-level endurance &amp; race pace work</li>
+            <li>Force plate testing + video stroke analysis</li>
+            <li>High-performance training environment</li>
+          </ul>
+          <span class="spots-badge gold">24 Spots</span>
+        </div>
+      </div>
+      <div class="week-card">
+        <div class="week-card-header blue">
+          <p class="week-num">Week 2 &middot; June 15&ndash;19</p>
+          <h3>Competitive Performance</h3>
+          <p class="week-dates">Competitive track</p>
+        </div>
+        <div class="week-card-body">
+          <span class="week-req blue">Knowledge of All 4 Strokes</span>
+          <ul>
+            <li>Technique &amp; efficiency development</li>
+            <li>Building endurance and race skills</li>
+            <li>Force plate testing + video stroke analysis</li>
+            <li>Structured, challenging environment</li>
+          </ul>
+          <span class="spots-badge blue">30 Spots</span>
+        </div>
+      </div>
+      <div class="week-card">
+        <div class="week-card-header green">
+          <p class="week-num">Week 3 &middot; June 22&ndash;26</p>
+          <h3>Stroke Development</h3>
+          <p class="week-dates">Development track</p>
+        </div>
+        <div class="week-card-body">
+          <span class="week-req green">Complete 25 Yards Without Stopping</span>
+          <ul>
+            <li>Stroke fundamentals &amp; technique</li>
+            <li>Water confidence &amp; coordination</li>
+            <li>Introduction to competitive swimming</li>
+            <li>Fun, supportive environment</li>
+          </ul>
+          <span class="spots-badge green">30 Spots</span>
+        </div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-block">
+        <h4>Force Plate Testing (Weeks 1 &amp; 2)</h4>
+        <ul>
+          <li><span class="dot"></span>Jump Height (cm) &mdash; explosiveness for starts &amp; turns</li>
+          <li><span class="dot"></span>Force Production (N) &mdash; how much force the athlete generates</li>
+          <li><span class="dot"></span>Left&ndash;Right Balance (%) &mdash; injury risk &amp; balanced development</li>
+          <li><span class="dot"></span>Explosive Speed (N/s) &mdash; speed of force production</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Video Stroke Analysis (Weeks 1 &amp; 2)</h4>
+        <ul>
+          <li><span class="dot"></span>Video recording of 1 primary stroke</li>
+          <li><span class="dot"></span>In-person video review with a coach</li>
+          <li><span class="dot"></span>2&ndash;3 key technique corrections</li>
+          <li><span class="dot"></span>Personalized drill recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section" id="schedule">
+    <p class="section-label">Daily Structure</p>
+    <h2 class="section-title">DAILY SCHEDULE</h2>
+    <div class="schedule-row"><div class="schedule-time">8:00 AM</div><div class="schedule-activity">Dryland Training</div></div>
+    <div class="schedule-row"><div class="schedule-time">9:00 &ndash; 11:00 AM</div><div class="schedule-activity">Swimming<small>Week 3 session ends at 10:30 AM</small></div></div>
+    <div class="schedule-row"><div class="schedule-time">11:15 AM &ndash; 1:15 PM</div><div class="schedule-activity">Lunch + Quiet Indoor Time<small>At the Community Center (~15 min walk from pool)</small></div></div>
+    <div class="schedule-row"><div class="schedule-time">1:15 &ndash; 1:30 PM</div><div class="schedule-activity">Educational Talk</div></div>
+    <div class="schedule-row"><div class="schedule-time">2:00 &ndash; 4:00 PM</div><div class="schedule-activity">Swimming</div></div>
+    <div class="schedule-row"><div class="schedule-time">4:00 &ndash; 5:00 PM</div><div class="schedule-activity">Optional Add-On Session<small>4:15&ndash;5:00 PM for enrolled add-on swimmers</small></div></div>
+    <div class="note-box">Nutritious lunch, pre-practice snack, and post-practice recovery snack are provided every day. Please indicate any dietary restrictions or allergies during registration.</div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section" id="addons">
+    <p class="section-label">Optional</p>
+    <h2 class="section-title">ADD-ON PROGRAMS</h2>
+    <div class="addon-cards">
+      <div class="addon-card">
+        <div class="addon-header">
+          <div class="addon-price">+$175</div>
+          <h4>Performance Plus Package</h4>
+          <p class="addon-weeks">Weeks 1 &amp; 2 only</p>
+        </div>
+        <div class="addon-body">
+          <ul>
+            <li>Additional 4:15&ndash;5:00 PM dryland session daily</li>
+            <li>Advanced video analysis of 2 strokes &mdash; slow-motion, annotated feedback</li>
+            <li>Personalized technique corrections &amp; drill plan</li>
+            <li>Comprehensive force plate testing &mdash; explosive power, single-leg strength, stability, shoulder screening</li>
+            <li>Clear results with personalized recommendations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-header">
+          <div class="addon-price">+$100</div>
+          <h4>Skill Plus Package</h4>
+          <p class="addon-weeks">Week 3 only</p>
+        </div>
+        <div class="addon-body">
+          <ul>
+            <li>Additional 4:15&ndash;5:00 PM dryland session daily</li>
+            <li>Extra technique instruction</li>
+            <li>Coordination &amp; confidence development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <p class="section-label">Investment</p>
+    <h2 class="section-title">PRICING &amp; REGISTRATION</h2>
+    <div class="policy-grid" style="margin-bottom:28px">
+      <div class="policy-card">
+        <p class="policy-phase priority">Priority Registration</p>
+        <h5>Eagle Members Only</h5>
+        <p>Exclusive early access with the lowest pricing tier. Available before public registration opens.</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-phase early">Early Registration</p>
+        <h5>Open to All</h5>
+        <p>Available after priority registration closes. Limited-time discounted pricing.</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-phase standard">Standard Registration</p>
+        <h5>Regular Pricing</h5>
+        <p>Applies after early registration closes. Subject to availability.</p>
+      </div>
+    </div>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Camp</th>
+          <th class="priority">Priority<br><span style="font-weight:400;opacity:0.8">Eagle Members</span></th>
+          <th class="early">Early<br><span style="font-weight:400;opacity:0.8">Public</span></th>
+          <th class="standard">Standard<br><span style="font-weight:400;opacity:0.8">Regular</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="week1"><td>Week 1 &ndash; Elite Performance</td><td><span class="price-highlight">$795</span></td><td>$825</td><td>$900</td></tr>
+        <tr class="week2"><td>Week 2 &ndash; Competitive Performance</td><td><span class="price-highlight">$695</span></td><td>$725</td><td>$800</td></tr>
+        <tr class="week3"><td>Week 3 &ndash; Stroke Development</td><td><span class="price-highlight">$525</span></td><td>$550</td><td>$600</td></tr>
+      </tbody>
+    </table>
+    <div class="discount-note"><strong>Multi-Week Discount:</strong> Swimmers attending multiple weeks receive <strong>$50 off each additional week.</strong> All eligible registrations must be in your cart at checkout &mdash; no retroactive discounts for prior registrations.</div>
+    <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <a href="https://eagleaquatics.captyn.com" style="background:var(--navy);color:white;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;padding:13px 28px;border-radius:2px;display:inline-block">Register at eagleaquatics.captyn.com</a>
+      <a href="https://eagleaquaticsfl.com" style="font-size:14px;color:var(--teal);text-decoration:none;font-weight:500">More info at eagleaquaticsfl.com &rarr;</a>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">Full payment required to secure your spot. Spots are first come, first served.</p>
+  </section>
+
+  <!-- STAFF -->
+  <section class="section" id="staff">
+    <p class="section-label">Coaching Team</p>
+    <h2 class="section-title">MEET YOUR COACHES</h2>
+    <div class="staff-grid">
+      <div class="staff-card" style="grid-column:span 2;border-left:3px solid var(--gold)">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#B8860B,#DAA520);width:52px;height:52px;font-size:20px">AM</div>
+        <div>
+          <div class="staff-name" style="font-size:16px">Adam Madarassy</div>
+          <div class="staff-role">Head Coach &middot; Olympian &middot; Lead of the Eagle Summer Performance Camp Series</div>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:var(--teal)">AP</div>
+        <div><div class="staff-name">Antonio Pineiro</div><div class="staff-role">South Florida Stallions Swim Coach</div></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:var(--blue)">CV</div>
+        <div><div class="staff-name">Carlos Van Isschot</div><div class="staff-role">Gulliver Swim Coach</div></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:var(--navy)">PR</div>
+        <div><div class="staff-name">Peter Raffai</div><div class="staff-role">Eagle Aquatics Strength &amp; Conditioning Coach &middot; Nutritionist</div></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:var(--green)">AA</div>
+        <div><div class="staff-name">Angelica Andara</div><div class="staff-role">Eagle Aquatics Coach</div></div>
+      </div>
+      <div class="staff-card" style="grid-column:span 2">
+        <div class="staff-avatar" style="background:#7B5EA7">GM</div>
+        <div><div class="staff-name">Gio Musiello</div><div class="staff-role">Rice University Swimmer</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGISTICS -->
+  <section class="section" id="logistics">
+    <p class="section-label">Practical Info</p>
+    <h2 class="section-title">LOGISTICS</h2>
+    <div class="two-col">
+      <div>
+        <div class="info-block" style="margin-bottom:16px">
+          <h4>Drop-Off &amp; Pick-Up</h4>
+          <ul>
+            <li><span class="dot"></span>Drop-off no earlier than <strong>7:45 AM</strong> (15 min before start)</li>
+            <li><span class="dot"></span>Pick-up by <strong>4:10 PM</strong>, or <strong>5:10 PM</strong> with add-on package</li>
+            <li><span class="dot"></span>Drop-off at the front entrance roundabout</li>
+            <li><span class="dot"></span>Parking available &mdash; park and walk in through main entrance</li>
+          </ul>
+          <div class="warning-box">&#9888;&#65039; Do not park in the roundabout &mdash; it is a fire lane and must remain clear at all times.</div>
+        </div>
+        <div class="info-block">
+          <h4>What to Bring</h4>
+          <div class="bring-grid">
+            <div class="bring-item">&#x1F9B1; Swimsuit &times;2</div>
+            <div class="bring-item">&#x1F97D; Goggles &times;2</div>
+            <div class="bring-item">&#x1F9F4; Sunscreen</div>
+            <div class="bring-item">&#x1F4A7; Water Bottle</div>
+            <div class="bring-item">&#x1F3C3; Dryland Clothes</div>
+            <div class="bring-item">&#x1F9D8; Yoga Mat</div>
+            <div class="bring-item included">&#x1F455;<div><span class="bi-label">Included</span>Camp Shirt</div></div>
+            <div class="bring-item included">&#x1F9E2;<div><span class="bi-label">Included</span>Swim Cap</div></div>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:12px">Optional for quiet time: pillow, book, cards/games, headphones.</p>
+        </div>
+      </div>
+      <div>
+        <div class="info-block" style="margin-bottom:16px">
+          <h4>Quiet Time / Midday Break</h4>
+          <ul>
+            <li><span class="dot"></span>Held indoors at the Community Center</li>
+            <li><span class="dot"></span>~15 min walk from pool &mdash; coaches accompany all swimmers</li>
+            <li><span class="dot"></span>Miami Shores bus used when available</li>
+            <li><span class="dot"></span>Used for rest, relaxation &amp; educational talks</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>Nutrition</h4>
+          <ul>
+            <li><span class="dot"></span>Nutritious lunch provided daily</li>
+            <li><span class="dot"></span>Pre-practice snack provided</li>
+            <li><span class="dot"></span>Post-practice recovery snack provided</li>
+            <li><span class="dot"></span>Meals designed around energy, recovery &amp; hydration</li>
+            <li><span class="dot"></span>Indicate dietary restrictions at registration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="section" id="safety">
+    <p class="section-label">Health &amp; Safety</p>
+    <h2 class="section-title">SAFETY &amp; MEDICAL</h2>
+    <div class="safety-item">
+      <div class="safety-icon">&#x2713;</div>
+      <p>All coaches are trained and certified. Medical conditions must be disclosed during registration. Emergency contact information is required for all participants.</p>
+    </div>
+    <div class="safety-item">
+      <div class="safety-icon">&#9889;</div>
+      <p><strong>Lightning &amp; Weather Policy:</strong> Miami Shores Aquatic Center is equipped with a lightning detection system. When the alarm sounds, all swimmers exit the pool and clear the deck immediately, moving to a covered area. Camp continues with educational talks or dryland exercises &mdash; no session time is lost.</p>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="section" id="policies">
+    <p class="section-label">Fine Print</p>
+    <h2 class="section-title">POLICIES</h2>
+    <table class="refund-table">
+      <thead><tr><th>Cancellation Timing</th><th>Refund</th></tr></thead>
+      <tbody>
+        <tr><td>21+ days before camp start</td><td class="refund-full">Full refund (minus $150 admin fee)</td></tr>
+        <tr><td>14&ndash;20 days before camp start</td><td class="refund-half">50% refund (minus $150 admin fee)</td></tr>
+        <tr><td>Within 14 days of camp start</td><td class="refund-no">No refund</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">All refunds are subject to a <strong>$150 administrative fee</strong>. Full payment is required at registration to secure your spot.</div>
+    <div style="margin-top:32px" class="two-col">
+      <div class="info-block">
+        <h4>Communication</h4>
+        <ul>
+          <li><span class="dot"></span><strong>Email</strong> &mdash; General updates, schedules &amp; important info</li>
+          <li><span class="dot"></span><strong>Text</strong> &mdash; Time-sensitive or urgent updates</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Expectations</h4>
+        <ul>
+          <li><span class="dot"></span>Arrive on time</li>
+          <li><span class="dot"></span>Bring proper equipment</li>
+          <li><span class="dot"></span>Stay engaged and focused</li>
+          <li><span class="dot"></span>Respect coaches and teammates</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-bar section" style="opacity:1;transform:none">
+    <div>
+      <h3>READY TO REGISTER?</h3>
+      <p>Questions? Reach Adam at <a href="mailto:adammadarassy@yahoo.com">adammadarassy@yahoo.com</a></p>
+    </div>
+    <div class="contact-links">
+      <a href="https://eagleaquatics.captyn.com" class="contact-btn primary">Register Now</a>
+      <a href="https://eagleaquaticsfl.com" class="contact-btn secondary">More Info</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Eagle Aquatics &middot; Miami Shores Aquatic Center &middot; <a href="https://eagleaquaticsfl.com">eagleaquaticsfl.com</a></p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.section').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
